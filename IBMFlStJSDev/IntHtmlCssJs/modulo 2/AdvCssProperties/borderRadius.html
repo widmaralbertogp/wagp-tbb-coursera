@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .rounded-box 
+        {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            border: 2px solid blue;
+            border-radius: 15px; /* Aplica un radio de 15px a todas las esquinas */
+        }
+        .rounded-box-individual {
+  width: 200px;
+  height: 100px;
+  background-color: lightgreen;
+  border: 2px solid green;
+  border-top-left-radius: 10px; /* Aplica 10px a la esquina superior izquierda */
+  border-bottom-right-radius: 20px; /* Aplica 20px a la esquina inferior derecha */
+}
+.rounded-box-percentage {
+  width: 150px;
+  height: 150px;
+  background-color: lightcoral;
+  border: 2px solid red;
+  border-radius: 25%; /* Aplica un 25% del ancho y alto a cada esquina */
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: lightgoldenrodyellow;
+  border: 2px solid goldenrod;
+  border-radius: 50%;
+}
+
+.ellipse {
+  width: 200px;
+  height: 100px;
+  background-color: lightcyan;
+  border: 2px solid cyan;
+  border-radius: 50px/25px; /* Elipse */
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="rounded-box">Este es un ejemplo de borde redondeado.</div><br>
+    <div class="rounded-box-individual">Este es un ejemplo de borde redondeado individual.</div><br>
+    <div class="rounded-box-percentage">Este es un ejemplo de borde redondeado con porcentaje.</div><br>
+<div class="circle">Círculo</div><br>
+<div class="ellipse">Elipse</div><br>
+</body>
+</html>

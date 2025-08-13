@@ -1,0 +1,29 @@
+tagName {
+    /* Styles for the elements with the specified tag name */
+}
+/* the next is the tag "h1" */
+h1 { 
+    /* Styles for h1 elements */ 
+    color: #3366cc; 
+    font-size: 24px; 
+}
+/*  Id Selector */
+#yourID {
+    /* Styles for the element with the specified ID */
+}
+/* Id real of a header  */
+#header {
+    /* Styles for the element with id="header" */ 
+    background-color: #f0f0f0; 
+    padding: 10px; 
+}
+/*  Class Selector */
+.className {
+    /* Styles for the elements with the specified class */
+}
+/* real class selector */ 
+.highlight { 
+    /* Styles for elements with class="highlight" */
+    background-color: #ffd700; 
+    color: #333; 
+}

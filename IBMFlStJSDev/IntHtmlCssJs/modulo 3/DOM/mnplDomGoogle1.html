@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Interactiva con DOM</title>
+    <style>
+        /* Estilos básicos para la visualización */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #eee;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        main {
+            display: flex;
+            padding: 20px;
+        }
+        article {
+            flex: 2;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-right: 20px;
+        }
+        aside {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Página Interactiva</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" data-section="inicio">Inicio</a></li>
+            <li><a href="#" data-section="articulos">Artículos</a></li>
+            <li><a href="#" data-section="contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article id="inicio">
+            <h2>Inicio</h2>
+            <p>Bienvenido a mi página. Aquí puedes encontrar información sobre diferentes temas.</p>
+        </article>
+
+        <article id="articulos" class="oculto">
+            <h2>Artículos</h2>
+            <div id="lista-articulos">
+                <div class="articulo-item">
+                    <h3>Artículo 1</h3>
+                    <p>Contenido del artículo 1.</p>
+                </div>
+                <div class="articulo-item">
+                    <h3>Artículo 2</h3>
+                    <p>Contenido del artículo 2.</p>
+                </div>
+            </div>
+        </article>
+
+        <article id="contacto" class="oculto">
+            <h2>Contacto</h2>
+            <p>Puedes contactarme a través de [correo electrónico] o [redes sociales].</p>
+        </article>
+
+        <aside>
+            <h3>Barra Lateral</h3>
+            <p>Información adicional o enlaces de interés.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi Empresa</p>
+    </footer>
+
+    <script>
+        // JavaScript para la interacción
+        document.addEventListener('DOMContentLoaded', function() {
+            const enlacesMenu = document.querySelectorAll('nav a');
+            const secciones = document.querySelectorAll('article');
+
+            enlacesMenu.forEach(enlace => {
+                enlace.addEventListener('click', function(evento) {
+                    evento.preventDefault();
+
+                    const seccionId = this.getAttribute('data-section');
+
+                    // Ocultar todas las secciones
+                    secciones.forEach(seccion => {
+                        seccion.classList.add('oculto');
+                    });
+
+                    // Mostrar la sección correspondiente
+                    document.getElementById(seccionId).classList.remove('oculto');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

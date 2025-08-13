@@ -1,0 +1,140 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ArrayDemo",
+            "request": "launch",
+            "mainClass": "ArrayDemo",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "AssignmentOperators",
+            "request": "launch",
+            "mainClass": "AssignmentOperators",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "CurrencyConversion",
+            "request": "launch",
+            "mainClass": "CurrencyConversion",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "CursorPositionExample",
+            "request": "launch",
+            "mainClass": "CursorPositionExample",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "EjemploInputPrintln",
+            "request": "launch",
+            "mainClass": "EjemploInputPrintln",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "FileNameDemo",
+            "request": "launch",
+            "mainClass": "FileNameDemo",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "MyFirstPrgram",
+            "request": "launch",
+            "mainClass": "MyFirstPrgram",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "RawMembers",
+            "request": "launch",
+            "mainClass": "RawMembers",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "StringDemo",
+            "request": "launch",
+            "mainClass": "StringDemo",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "StringInterningDemo",
+            "request": "launch",
+            "mainClass": "StringInterningDemo",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "StringPoolDemo",
+            "request": "launch",
+            "mainClass": "StringPoolDemo",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "TodoEjemplo",
+            "request": "launch",
+            "mainClass": "TodoEjemplo",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "clearConsole",
+            "request": "launch",
+            "mainClass": "clearConsole",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "javaVars",
+            "request": "launch",
+            "mainClass": "javaVars",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "reversingString",
+            "request": "launch",
+            "mainClass": "reversingString",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        },
+        {
+            "type": "java",
+            "name": "validatingEmail",
+            "request": "launch",
+            "mainClass": "validatingEmail",
+            "projectName": "IntroduccionToSoftwareDevelopment_1f0fac0e"
+        }
+    ]
+}

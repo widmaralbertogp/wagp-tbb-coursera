@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<fieldset>
+    <legend>Arrays</legend>
+    <p>Array base: <code id="ab"></code></p>
+    <table border="">
+        <tr style="background-color: yellow">
+            <th>Comando implementado</th><th>Arreglo resultado</th>
+        </tr>
+            <tr><td>1. PUSH - Añade 6 al final: </td><td><code id="cd1"></code></td>        </tr>
+            <tr><td>2. POP - Elimina 6 al final:</td><td><code id="cd2"></code></td>        </tr>
+            <tr><td>3. UNSHIFT - Añade 0 al inicio:</td><td><code id="cd3"></code></td>        </tr>
+            <tr><td>4. SHIFT - elimina 0 del inicio:</td><td><code id="cd4"></code></td>       </tr>
+            <tr><td>5. SPLICE - Agrega o Leimina en cualquier posición:</td><td><code id="cd5"></code></td>        </tr>
+            <tr><td>6. SLICE - Extrae sin modificar original:</td><td><code id="cd6"></code></td>        </tr>
+            <tr><td>7. MAP - Crea nuevo array transformado:</td><td><code id="cd7"></code></td></tr>
+            <tr><td>8. FILTER - Filtra elementos - Mayores de 3:</td><td><code id="cd8"></code></td></tr>   
+            <tr><td>9. REDUCE - Reduce a un solo valor:</td><td><code id="cd9"></code></td></tr>       
+            <tr><td>10. FIND - Encuentra primer elemento que cumple:</td><td><code id="cd10"></code></td></tr>
+            <tr><td>11. FINDINDEX - Índice del primer elemento que cumple:</td><td><code id="cd11"></code></td></tr>        
+            <tr><td>12. INCLUDES - Comprueba existencia:</td><td><code id="cd12"></code></td></tr>                                
+            <tr><td>13. indexOf - Índice de un valor (o -1 si no está):</td><td><code id="cd13"></code></td></tr>                    
+            <tr><td>14. forEach - Recorre sin devolver nuevo array:</td><td><code id="cd14"></code></td></tr>                    
+            <tr><td>15. every - Todos cumplen la condición:</td><td><code id="cd15"></code></td></tr>                    
+            <tr><td>16. some - Alguno cumple la condición:</td><td><code id="cd16"></code></td></tr>                    
+            <tr><td>17. sort - Ordena (modifica el array):</td><td><code id="cd17"></code></td></tr>                    
+            <tr><td>18. reverse - Invierte orden:</td><td><code id="cd18"></code></td></tr>                    
+            <tr><td>19. join - Une en string:</td><td><code id="cd19"></code></td></tr>                    
+            <tr><td>20. concat - Une arrays:</td><td><code id="cd20"></code></td></tr>                    
+            <tr><td>21. Anidado - Aplana arrays anidados:</td><td><code id="cd21"></code></td></tr>                    
+            <tr><td>22. Aplanado - Comprueba existencia:</td><td><code id="cd22"></code></td></tr>                                
+        </tr>
+    </table>
+</fieldset>
+<script>
+    // Array base
+    let numeros = [1, 2, 3, 4, 5];
+    document.getElementById("ab").innerHTML = numeros;
+    // 1. push - Añade al final
+    numeros.push(6); // [1,2,3,4,5,6]
+    document.getElementById("cd1").innerHTML = numeros;
+    // 2. pop - Elimina del final
+    numeros.pop(); // [1,2,3,4,5]
+    document.getElementById("cd2").innerHTML = numeros;
+    // 3. unshift - Añade al inicio
+    numeros.unshift(0); // [0,1,2,3,4,5]
+    document.getElementById("cd3").innerHTML = numeros;
+    // 4. shift - Elimina del inicio
+    numeros.shift(); // [1,2,3,4,5]
+    document.getElementById("cd4").innerHTML = numeros;
+    // 5. splice - Agrega o elimina en cualquier posición
+    numeros.splice(2, 1 , 99 ); // [1,2,99,4,5] (elimina 1 elemento en posición 2 y agrega 99)
+    document.getElementById("cd5").innerHTML = numeros;
+    // 6. slice - Extrae sin modificar original
+    let subArray = numeros.slice(1, 4); // [2,99,4]
+    document.getElementById("cd6").innerHTML = subArray;
+    // 7. map - Crea nuevo array transformado
+    let dobles = numeros.map(n => n * 2); // [2,4,198,8,10]
+    document.getElementById("cd7").innerHTML = dobles;
+    // 8. filter - Filtra elementos    
+    let mayoresQueTres = numeros.filter(n => n > 3); // [99,4,5]    
+    document.getElementById("cd8").innerHTML = mayoresQueTres;
+    // 9. reduce - Reduce a un solo valor    
+    let suma = numeros.reduce((acc, val) => acc + val, 0); // 111
+    document.getElementById("cd9").innerHTML = suma;
+    // 10. find - Encuentra primer elemento que cumple
+    let encontrado = numeros.find(n => n > 3); // 99
+    document.getElementById("cd10").innerHTML = encontrado;
+    
+    // 11. findIndex - Índice del primer elemento que cumple
+    let indice = numeros.findIndex(n => n === 99); // 2
+    document.getElementById("cd11").innerHTML = indice;
+
+    // 12. includes - Comprueba existencia
+    let tieneCuatro = numeros.includes(4); // true
+    document.getElementById("cd12").innerHTML = tieneCuatro;
+
+    // 13. indexOf - Índice de un valor (o -1 si no está)
+    let indiceDeCinco = numeros.indexOf(5); // 4
+    document.getElementById("cd13").innerHTML = indiceDeCinco;
+    
+    // 14. forEach - Recorre sin devolver nuevo array
+    console.log("Recorriendo:");
+    numeros.forEach((n, i) => console.log(`Índice ${i}: valor ${n}`));
+    document.getElementById("cd14").innerHTML = numeros;
+    
+    // 15. every - Todos cumplen la condición
+    let todosPositivos = numeros.every(n => n > 0); // true
+    document.getElementById("cd15").innerHTML = todosPositivos;
+
+    // 16. some - Alguno cumple la condición
+    let hayMayorACien = numeros.some(n => n > 100); // false
+    document.getElementById("cd16").innerHTML = hayMayorACien;
+
+    // 17. sort - Ordena (modifica el array)
+    let ordenado = [...numeros].sort((a, b) => a - b); // copia ordenada ascendente
+    document.getElementById("cd17").innerHTML = ordenado;
+
+    // 18. reverse - Invierte orden
+    let invertido = [...numeros].reverse(); // copia invertida
+    document.getElementById("cd18").innerHTML = invertido;
+
+    // 19. join - Une en string
+    let comoTexto = numeros.join(" - "); // "1 - 2 - 99 - 4 - 5"
+    document.getElementById("cd19").innerHTML = comoTexto;
+    
+    // 20. concat - Une arrays    
+    let combinado = numeros.concat([6, 7]); // [1,2,99,4,5,6,7]
+    document.getElementById("cd20").innerHTML = combinado;
+    // 21. flat - Aplana arrays anidados
+    let anidado = [1, [2, [3, 4]]];
+    document.getElementById("cd21").innerHTML = anidado;
+    let plano = anidado.flat(2); // [1,2,3,4]
+    document.getElementById("cd22").innerHTML = plano;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <fieldset>  
+            <legend>Initiation</legend>
+                <p>Assing an initial value</p>
+                <p>name = "John"; // initializing a variables</p>
+        </fieldset>                        
+        <fieldset>  
+            <legend>Declaration : Declaration keywords</legend>            
+            <ul>
+                <li><strong>VAR:</strong> Function-level Scope - a variable declared with VAR is available throughout the entire function </li>
+                <li><strong>LET:</strong> Block-level Scoping - is only available within the block enclosed by curly brackes</li>
+                <li><strong>CONST:</strong> Block-level Scoping - you can't reassing it a diferent value</li>
+            </ul>
+            <button onclick="explVAR()"> VAR </button>
+            <button onclick="explLET()"> LET </button>
+            <button onclick="explCONST()"> CONST </button>
+            <h4>LET can be reassigned but  not declared wihtin the same block</h4>        
+
+        </fieldset>         
+        <fieldset>
+            <legend>Primitive data type</legend>
+            <ul>
+            <li><strong>String:</strong>Text  example: let name = "Alice";</li>
+            <li><strong>Number:</strong> Integers and floating points  example: [let age = 30;] or [let price = 9.99;]</li>
+            <li><strong>Boolean:</strong> true or false values</li>
+            <li><strong>Undefined:</strong> Declared but not assigned a value examples: Let x;</li>
+            <li><strong>Null:</strong> Empty value  example: Let emptyValue = null;</li>
+            </ul>
+        </fieldset>        
+        <fieldset>
+            <legend>Composite data types</legend>
+            <p><strong>Array:</strong> List-like data structure example: my _array[1,2,3,4,5]; </p>
+            <p><strong>Objets:</strong> Collection of key-value pair.</p>            
+            <fieldset>
+                var person = { <br>
+                    name: "John",<br>
+                    age: 30,<br>
+                    city:"Quito";<br>
+                }
+            </fieldset>
+
+        </fieldset>
+        <script>
+            function explVAR()
+            {
+                if (true){
+                    var x = 10;
+                }                
+                alert("the number :" + x + " is available outside the if block")
+            }
+            function explLET()
+            {   
+                {
+                    let x = 10;                
+                }
+                console.log(x); // Error: x is not defined (outside the block)
+            }
+            function explCONST()
+            {   
+                const pi = 3.14; 
+                pi = 3.14159;  // error: assignment to a constant variable
+                if (true)
+                {
+                    const x = 10;                
+                }
+                console.log(x); // Error: x is not defined (outside the block)
+            }
+        </script>
+</body>
+</html>

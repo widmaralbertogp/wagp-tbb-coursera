@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <fieldset>
+        <legend>Function declaration</legend>
+        <table border="fixed" align="center">
+        <tr>
+            <th>Start with function keyword</th>
+            <th>Give a name of function</th>
+            <th>Parentheses that tells it is a function</th>
+            <th>Open the function with a curly brace</th>
+        </tr>
+        <tr>
+            <td><center>function</center></td>
+            <td><center>sayHello</center></td>
+            <td><center>()</center></td>
+            <td><center>{</center></td>                
+        </tr>
+        <tr>
+             <td  colspan="4"><center>console.log("Hello! Widmar Gómez");</center></td>
+        </tr>
+        </table>
+    </fieldset>
+    <h2>Catefories of functions</h2>
+    <fieldset>
+        <legend>Non-Parameterized functions</legend>
+        <p>Don't require parameters to operate</p>
+        <pre>
+            <code>
+            &lt;body&gt;
+                &lt;p id="functiondata1"&gt;&lt;/p&gt;
+                &lt;script&gt;
+            </code>        
+                <code class="language-javascript">
+                    function myFunction() 
+                    {
+                        const a = 3;
+                        const b = 4;
+                        return a + b;                    
+                    }
+                    document.getElementById('functiondata1').imnerHTML=add();
+                </code>
+                &lt;/script&gt;
+            &lt;/body&gt;
+        </pre>
+
+    </fieldset>
+    <p>Resultado de ejecutar la funcion 1</p>
+    <p id="fdata1"></p> 
+    <fieldset>
+        <legend>Parameterized functions</legend>
+        <ul>
+        <li>Accept parameters to operate.</li>
+        <li>Defined in the function declaration.</li>
+        <li>Pass values when calling the function.</li>
+        </ul>
+        <pre>
+            <code>
+            &lt;body&gt;
+                &lt;p id="functiondata1"&gt;&lt;/p&gt;
+                &lt;script&gt;
+            </code>        
+                <code class="language-javascript">
+                    function add(a, b) 
+                    {                        
+                        return a + b;                    
+                    }
+                    document.getElementById('functiondata1').imnerHTML=add(3,4);
+                </code>
+                &lt;/script&gt;
+            &lt;/body&gt;
+        </pre>
+
+    </fieldset>
+    <p>Resultado de ejecutar la funcion 2</p>
+    <p id="fdata2"></p> 
+    <p>Resultado de ejecutar la funcion de flechas 3</p>
+    <p id="fdata3"></p> 
+    <p>Resultado de ejecutar la funcion Inmediata 4</p>
+    <p id="fdata4"></p> 
+    <script>
+        function myFunction() 
+        {
+           const a = 3;
+           const b = 4;
+           return a + b;                    
+        }        
+        document.getElementById('fdata1').innerHTML = myFunction();
+        function add(a, b) 
+        {                        
+            return a + b;                    
+        }
+        document.getElementById('fdata2').innerHTML=add(10,4); 
+        const x = 5;
+        const square = (x) => x * x;        
+        document.getElementById('fdata3').innerHTML= square(5);
+        var resultado = (function(a, b) {return a + b;})(5, 3);
+        document.getElementById('fdata4').innerHTML= resultado;
+        /*const saludar = () => {"Hola"};
+        document.getElementById('fdata3').innerHTML= saludar();*/
+    </script>
+</body>
+</html>

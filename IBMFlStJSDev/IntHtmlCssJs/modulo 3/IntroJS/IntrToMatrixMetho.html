@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h4>Array Methods</h4>
+        <fieldset>
+            <legend>Types of array methods </legend>
+            <ul>
+                <li>forEach</li>
+                <li>Map</li>
+                <li>Filter</li>
+                <li>Reduce</li>
+                <li>Find</li>
+            </ul>
+        </fieldset>
+        <h3>Sends a welcome email to each user by forEach method</h3>
+        <div id="welcome"></div>
+        <h3>The price of produtcs by MAP method</h3>
+        <div id="products"></div>
+        <h3>Filter books published in the last 5 years by Filter method</h3>
+        <div id="productsf"></div>
+        <h3>Extract price to new array by reduce method</h3>
+        <div id="productsR"></div>
+        <h3>Find an employee with a specific id by Find method</h3>
+        <div id="productsFd"></div>
+        <script>
+            //Sends a welcome email to each user
+            function sendWelcomeEmail(email)
+            {
+               const message = `Welcome email sent to: ${email}`;
+               const p = document.createElement('p');
+               p.textContent = message;
+               document.getElementById("welcome").appendChild(p);
+            }
+            const users = [{name: 'Alice', email:'alice@example.com'},{name: 'Bob', email:'bob@example.com'},{name: 'Charlie', email:'charlie@example.com'},];                                               
+            users.forEach((user) => { sendWelcomeEmail(user.email);});            
+        </script>
+        <script>
+            const products = [{name: 'Laptop', price: 1000},{name: 'Smartphone', price:500 },{name: 'Table', price: 300},];                                               
+            products.map((product) => {
+            const message2 = `The price of: ${product.name} is $${product.price}`;
+               const p = document.createElement('p');
+               p.textContent = message2;
+               document.getElementById("products").appendChild(p);
+
+            })
+        </script>
+        <script>
+            const products2 = [{name: 'Laptop', price: 1000},{name: 'Smartphone', price:500 },{name: 'Table', price: 300},{name: 'Monitor', price: 250},{name:'Keyboard', price: 50}];                                               
+            function filterProductsByPriceRange(products, minPrice, maxPrice){
+                return products2.filter((product) => product.price >= minPrice && product.price <= maxPrice);}
+            const minPrice = 100;
+            const maxPrice = 500;
+            const filteredProducts = filterProductsByPriceRange(products, minPrice, maxPrice);
+            filteredProducts.forEach((product) => {
+               const message3 = `${product.name} is of $${product.price}`;
+               const p = document.createElement('p');
+               p.textContent = message3;
+               document.getElementById("productsf").appendChild(p);});            
+        </script>
+        <script>
+            const orderPrice = [50, 30, 25, 40, 15];
+            const totalOrderValue = orderPrice.reduce((total, price) => total + price, 0);
+            const message4 = `the total value of the order is: ` + totalOrderValue;
+            const p = document.createElement('p');
+            p.textContent = message4;
+            document.getElementById("productsR").appendChild(p);            
+        </script>
+        <script>
+            
+        </script>
+</body>
+</html>

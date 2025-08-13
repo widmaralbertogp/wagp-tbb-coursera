@@ -1,0 +1,23 @@
+/* style.css */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+#characters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.character-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.character-card img {
+    width: 100%;
+    border-radius: 5px;
+}

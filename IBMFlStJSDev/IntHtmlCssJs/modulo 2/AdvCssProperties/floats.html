@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo float CSS</title>
+<style>
+.caja {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+#caja1 {
+  float: left;
+  background-color: red;
+}
+
+#caja2 {
+  float: left;
+  background-color: green;
+}
+
+#caja3 {
+  float: left;
+  background-color: blue;
+}
+
+#caja4 {
+  float: none; /* or clear:both */
+  background-color: yellow;
+  clear: both; /* Evita que este elemento flote */
+}
+
+#caja5 {
+    float: left;
+    background-color: orange;
+}
+</style>
+</head>
+<body>
+
+<div class="caja" id="caja1">Caja 1</div>
+<div class="caja" id="caja2">Caja 2</div>
+<div class="caja" id="caja3">Caja 3</div>
+<div class="caja" id="caja4">Caja 4</div>
+<div class="caja" id="caja5">Caja 5</div>
+
+
+
+</body>
+</html>

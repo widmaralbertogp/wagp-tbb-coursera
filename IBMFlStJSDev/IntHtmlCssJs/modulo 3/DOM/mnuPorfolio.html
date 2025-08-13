@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú con Submenús</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #222;
+    }
+
+    ul.menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #222;
+    }
+
+    ul.menu > li {
+      position: relative;
+    }
+
+    ul.menu > li > a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    ul.menu > li:hover {
+      background-color: #333;
+    }
+
+    /* Submenús */
+    ul.submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      list-style: none;
+      min-width: 180px;
+      padding: 0;
+      z-index: 1000;
+    }
+
+    ul.menu > li:hover > ul.submenu {
+      display: block;
+    }
+
+    ul.submenu li a {
+      padding: 12px 16px;
+      display: block;
+      color: white;
+      text-decoration: none;
+    }
+
+    ul.submenu li a:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul class="menu">
+    <li><a href="#">Inicio</a></li>
+
+    <li><a href="#">Sobre mí</a>
+      <ul class="submenu">
+        <li><a href="#">Formación</a></li>
+        <li><a href="#">Experiencia</a></li>
+        <li><a href="#">Certificaciones</a></li>
+        <li><a href="#">Idiomas</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Proyectos</a>
+      <ul class="submenu">
+        <li><a href="#">Web</a></li>
+        <li><a href="#">Móviles</a></li>
+        <li><a href="#">Open Source</a></li>
+        <li><a href="#">Freelance</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Hoja de vida</a>
+      <ul class="submenu">
+        <li><a href="#">Descargar CV</a></li>
+        <li><a href="#">CV interactivo</a></li>
+        <li><a href="#">Línea de tiempo</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Contacto</a>
+      <ul class="submenu">
+        <li><a href="#">Formulario</a></li>
+        <li><a href="#">Redes sociales</a></li>
+        <li><a href="#">WhatsApp</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Skills</a>
+      <ul class="submenu">
+        <li><a href="#">Lenguajes</a></li>
+        <li><a href="#">Frameworks</a></li>
+        <li><a href="#">DevOps</a></li>
+        <li><a href="#">Soft skills</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Servicios</a>
+      <ul class="submenu">
+        <li><a href="#">Desarrollo Web</a></li>
+        <li><a href="#">Consultoría</a></li>
+        <li><a href="#">Soporte</a></li>
+        <li><a href="#">Cursos</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Formulario dinámico</title>
+</head>
+<body>
+
+  <div id="formulario-container"></div>
+
+  <script>
+    // 1. Crear elementos del formulario
+    const formulario = document.createElement('form');
+    formulario.id = 'miFormulario';
+
+    const nombreLabel = document.createElement('label');
+    nombreLabel.textContent = 'Nombre: ';
+    const nombreInput = document.createElement('input');
+    nombreInput.type = 'text';
+    nombreInput.name = 'nombre';
+
+    const emailLabel = document.createElement('label');
+    emailLabel.textContent = 'Email: ';
+    const emailInput = document.createElement('input');
+    emailInput.type = 'email';
+    emailInput.name = 'email';
+
+    const submitButton = document.createElement('button');
+    submitButton.type = 'submit';
+    submitButton.textContent = 'Enviar';
+
+    // 2. Añadir elementos al formulario
+    formulario.appendChild(nombreLabel);
+    formulario.appendChild(nombreInput);
+    formulario.appendChild(document.createElement('br')); // Salto de línea
+    formulario.appendChild(emailLabel);
+    formulario.appendChild(emailInput);
+    formulario.appendChild(document.createElement('br'));
+    formulario.appendChild(submitButton);
+
+    // 3. Añadir el formulario al contenedor
+    const container = document.getElementById('formulario-container');
+    container.appendChild(formulario);
+
+    // 4. Manejar el evento de envío (opcional)
+    formulario.addEventListener('submit', function(evento) {
+      evento.preventDefault(); // Evitar el envío por defecto
+      const nombre = nombreInput.value;
+      const email = emailInput.value;
+      // Aquí podrías procesar los datos, por ejemplo, enviarlos a un servidor
+      console.log('Nombre:', nombre);
+      console.log('Email:', email);
+      alert('Formulario enviado!'); // Mostrar un mensaje de alerta
+    });
+  </script>
+
+</body>
+</html>

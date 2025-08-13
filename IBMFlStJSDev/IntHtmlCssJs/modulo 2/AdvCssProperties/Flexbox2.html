@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Flexbox</title>
+  <style>
+    /* Contenedor Flex */
+    .container {
+      display: flex;                  /* Activar Flexbox */
+      flex-direction: row;           /* Dirección principal: fila */
+      flex-wrap: wrap;               /* Permite que los items se envuelvan */
+      justify-content: space-around; /* Alineación horizontal */
+      align-items: center;           /* Alineación vertical de todos los items */
+      gap: 10px;                     /* Espacio entre los elementos */
+      height: 300px;
+      border: 2px dashed #333;
+      padding: 10px;
+    }
+
+    /* Elementos Flex */
+    .item {
+      background: #4CAF50;
+      color: white;
+      padding: 20px;
+      font-size: 1.2rem;
+      width: 100px;
+      text-align: center;
+    }
+
+    /* Modificación individual con align-self */
+    .item:nth-child(2) {
+      align-self: flex-start; /* Este se alinea arriba */
+    }
+
+    .item:nth-child(4) {
+      align-self: flex-end; /* Este se alinea abajo */
+    }
+
+    /* Ejemplo de flex-flow: combinación shorthand */
+    .flex-flow-column-wrap {
+      display: flex;
+      flex-flow: column wrap; /* Atajo de flex-direction + flex-wrap */
+      border: 2px solid tomato;
+      height: 200px;
+      width: 300px;
+      margin-top: 30px;
+      padding: 10px;
+    }
+
+    .flow-item {
+      background: steelblue;
+      color: white;
+      margin: 5px;
+      padding: 10px;
+      width: 100px;
+    }
+
+    /* Justify-self no funciona en Flexbox */
+    .wrong-example {
+      justify-self: center; /* ❌ No tiene efecto en Flexbox */
+    }
+  </style>
+</head>
+<body>
+    <ol>
+        <li>display: flex; Activar Flexbox </li>
+        <li>flex-direction: row; Dirección principal: fila </li>
+        <li>flex-wrap: wrap; Permite que los items se envuelvan</li>
+        <li>justify-content: space-around; Alineación horizontal</li>
+        <li>align-items: center; Alineación vertical de todos los items </li>        
+    </ol>
+
+  <h2>Contenedor Flexbox Básico</h2>
+  <div class="container">
+    <div class="item">A Left </div>
+    <div class="item">B<br>(align-self: start)</div>
+    <div class="item">C Center</div>
+    <div class="item">D<br>(align-self: end)</div>
+    <div class="item">E Rigth</div>
+  </div>
+
+  <h2>Ejemplo de <code>flex-flow: column wrap;</code></h2>
+  <div class="flex-flow-column-wrap">
+    <div class="flow-item">A</div>
+    <div class="flow-item">B</div>
+    <div class="flow-item">C</div>
+    <div class="flow-item">D</div>
+    <div class="flow-item">E</div>
+  </div>
+
+  <h2>Sobre <code>justify-self</code></h2>
+  <p><code>justify-self</code> ❌ <strong>no funciona</strong> con Flexbox, solo con Grid.</p>
+
+</body>
+</html>

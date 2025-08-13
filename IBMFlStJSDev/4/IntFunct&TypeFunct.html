@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="functiondata1"></p>
+    
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="d3aadbf1-d1b0-4327-905b-bc00d4ba327f" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+    <script>
+        /*Non Parameterized functions       */ 
+        function add0(){
+            const a = 3;
+            const b = 4;
+            return a + b;
+        }
+        /* document.getElementById('functiondata1').innerHTML=add0() */
+
+        /* Parameterized functions       */ 
+        function xadd(a,b)
+        {
+            return a + b;            
+        }        
+        document.getElementById('functiondata1').innerHTML = xadd(3,4);
+        
+        /* 
+         function add(a,b)    a and b are parameters 
+         innerText = add(3,4);  Here, 3 and 4 are the arguments passed to the function as parameters
+        
+         *******function declaration
+         function add(a,b);  
+        
+         ******functions expression 
+         const add = function(a,b);
+
+         type of functions
+
+         *******named function
+          const add = function(a,b); add is the name of the functions
+
+        ********* Immediately invoked function expression
+        ********* Defined and executed immediately
+        (function sayHallo() { console.log.("Hello!");})();
+        
+        ********* Arrow functions
+        const square = (x) => x * x;
+
+        ********** Anonymous functions
+        ********** Don't have name
+        ********** User as argument
+        **********  Assigned to variables
+        const multiply = (a,b) => a *b;
+                           p    d  b
+
+        p = It the parametes of the arrow function
+        d =  Defines an arrow fucntion 
+        b = is the function body
+
+        **** Parameterized and non parameterized arrow fucntions
+        
+        *****Arrow function that takes two parameters and return their sum
+        const add = (a,b) => 1 + b;
+
+        ***** USAGE
+        console.log(add(3,4)); // output: 7
+
+        
+        ****Non-parameterized arrow functions
+        ****Arrow function that logs a simple message
+        const greet = () => { console.log("Hello, world!"); };
+        
+        ******USAGE
+        greet(); // output: "Hello, world!"
+       */
+    </script>
+    </body>
+    </html>

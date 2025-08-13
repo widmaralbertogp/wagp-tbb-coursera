@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo position CSS</title>
+<style>
+.static-element {
+  position: static;
+  top: 50px; /* No tiene efecto */
+  left: 50px; /* No tiene efecto */
+  background-color: lightblue;
+  width: 150px;
+  height: 100px;
+}
+.relative-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: lightgray;
+}
+
+.relative-element {
+  position: relative;
+  top: 20px;
+  left: 30px;
+  background-color: lightgreen;
+  width: 100px;
+  height: 50px;
+}
+.absolute-container {
+  position: relative; /* Necesario para que el elemento absoluto se posicione correctamente */
+  width: 300px;
+  height: 250px;
+  background-color: lightblue;
+}
+
+.absolute-element {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  background-color: lightcoral;
+  width: 80px;
+  height: 60px;
+}
+.fixed-element {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: lightseagreen;
+  width: 120px;
+  height: 70px;
+}
+
+
+.container {
+    height: 150vh; /* Altura para permitir desplazamiento */
+    overflow-y: scroll; /* Habilita el desplazamiento vertical */
+  }
+
+  .sticky-header {
+    position: sticky;
+    top: 0; /* Se adhiere al borde superior */
+    background-color: lightblue;
+    padding: 10px;
+    border-bottom: 2px solid blue;
+    z-index: 1; /* Asegura que esté por encima de otros elementos */
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .item {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f0f0f0;
+  }
+
+</style>
+</head>
+<body>
+<div class="static-element">Elemento con posición estática</div>
+<div class="relative-container">
+  <div class="relative-element">Elemento con posición relativa</div>
+</div>
+<div class="absolute-container">
+  <div class="absolute-element">Elemento con posición absoluta</div>
+</div>
+<div class="fixed-element">Elemento con posición fija</div>
+<div class="sticky-container">
+  <div class="sticky-element">Elemento con posición sticky</div>
+</div>
+
+<div class="container">
+  <div class="sticky-header">Encabezado Pegajoso</div>
+  <div class="content">
+    <div class="item">Elemento 1</div>
+    <div class="item">Elemento 2</div>
+    <div class="item">Elemento 3</div>
+    <div class="item">Elemento 4</div>
+    <div class="item">Elemento 5</div>   
+  </div>
+</div>
+
+</body>
+</html>

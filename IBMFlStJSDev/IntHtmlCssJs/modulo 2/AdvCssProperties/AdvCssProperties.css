@@ -1,0 +1,44 @@
+/*
+    text-decoration-line: Especifica el tipo de línea: underline, overline, line-through, none. 
+    text-decoration-color: Define el color de la línea. 
+    text-decoration-style: Define el estilo de la línea: solid, double, dotted, dashed, wavy. 
+    text-decoration-thickness: Define el grosor de la línea. 
+*/
+.subrayado {
+    text-decoration: underline;
+}
+  
+.textdeco {
+  text-decoration-line: underline;
+  text-decoration-color: red;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+}
+  
+.under {
+  text-decoration: underline red;
+}
+
+.over {
+  text-decoration: wavy overline lime;
+}
+
+.line {
+  text-decoration: line-through;
+}
+
+.plain {
+  text-decoration: none;
+}
+
+.underover {
+  text-decoration: dashed underline overline;
+}
+
+.thick {
+  text-decoration: solid underline purple 4px;
+}
+
+.blink {
+  text-decoration: blink;
+}

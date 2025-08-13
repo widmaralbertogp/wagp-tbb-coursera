@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Crear archivo HTML con DOM</title>
+</head>
+<body>
+
+<button id="crearArchivo">Crear archivo HTML</button>
+
+<script>
+  document.getElementById("crearArchivo").addEventListener("click", function() {
+    
+    const nuevoHTML = "
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Nuevo Archivo HTML</title>
+      </head>
+      <body>
+        <h1>Contenido del nuevo archivo</h1>
+        <p>Este es un ejemplo de archivo HTML creado dinámicamente.</p>
+      </body>
+      </html>
+    ";
+
+    
+    const blob = new Blob([nuevoHTML], { type: 'text/html' });
+
+    
+    const enlace = document.createElement('a');
+
+    
+    enlace.href = URL.createObjectURL(blob);
+
+    
+    enlace.download = 'nuevo_archivo.html';
+
+    
+    enlace.click();
+
+    
+    URL.revokeObjectURL(enlace.href);
+  });
+</script>
+
+</body>
+</html>

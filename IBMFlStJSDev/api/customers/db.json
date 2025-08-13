@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "JSON-Server",
+      "author": "Amit"
+    },
+    {
+      "id": "2",
+      "title": "Node.js",
+      "author": "Mohit"
+    },
+    {
+      "id": "e8b2",
+      "title": "New Post",
+      "author": "User"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "Great post!",
+      "postId": 1
+    },
+    {
+      "id": "2",
+      "body": "Informative!",
+      "postId": 2
+    }
+  ],
+  "profile": {
+    "name": "Amit Kumar"
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dietary Services Access</title>
+</head>
+<body>
+  <script>
+    // Pedimos al usuario que indique su rol
+    let role = prompt("Bienvenido al Programa de Servicios Dietéticos.\nPor favor, indica tu rol (Employee, Enrolled Member, Subscriber, Non-Subscriber):");
+    
+    if (role) {
+      role = role.trim().toLowerCase();
+
+      switch (role) {
+        case "employee":
+          alert("Acceso concedido: Estás autorizado para acceder a 'Dietary Services'.");
+          break;
+        case "enrolled member":
+          alert("Acceso concedido: Estás autorizado para acceder a 'Dietary Services' y tener interacción uno a uno con un dietista.");
+          break;
+        case "subscriber":
+          alert("Acceso concedido: Tienes acceso parcial a 'Dietary Services'.");
+          break;
+        case "non-subscriber":
+          alert("Acceso denegado: Debes inscribirte o suscribirte para acceder a 'Dietary Services'.");
+          break;
+        default:
+          alert("Rol no válido. Por favor, introduce un rol válido.");
+      }
+    } else {
+      alert("No se introdujo ningún rol.");
+    }
+  </script>
+</body>
+</html>
