@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoja de Trucos JavaScript Completa</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+  section { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+  h2 { color: #2c3e50; }
+  button { margin-top: 5px; }
+  .output { background: #f4f4f4; padding: 8px; margin-top: 5px; border-radius: 5px; }
+  input { margin-bottom: 5px; }
+</style>
+</head>
+<body>
+
+<h1>Hoja de Trucos JavaScript Interactiva Completa</h1>
+
+<!-- ====================================================== -->
+<section>
+<h2>1. Variables</h2>
+
+<p><strong>var (alcance funcional)</strong></p>
+<p id="showVar" class="output"></p>
+<button onclick="showVarExample()">Ejecutar</button>
+<script>
+function showVarExample() {
+    var name = 'Peter';
+    document.getElementById('showVar').innerText = `Var example: ${name}`;
+}
+</script>
+
+<p><strong>let (alcance de bloque)</strong></p>
+<p id="showLet" class="output"></p>
+<button onclick="showLetExample()">Ejecutar</button>
+<script>
+function showLetExample() {
+    let emailId = 'test@example.com';
+    document.getElementById('showLet').innerText = `Let example: ${emailId}`;
+}
+</script>
+
+<p><strong>const (constante)</strong></p>
+<p id="showConst" class="output"></p>
+<button onclick="showConstExample()">Ejecutar</button>
+<script>
+function showConstExample() {
+    const employeeId = 120;
+    document.getElementById('showConst').innerText = `Const example: ${employeeId}`;
+}
+</script>
+</section>
+
+<!-- ====================================================== -->
+<section>
+<h2>2. Operadores</h2>
+
+<p><strong>Aritméticos</strong></p>
+<p id="outputOperators" class="output"></p>
+<button onclick="runOperators()">Ejecutar</button>
+<script>
+function runOperators() {
+    let x = 15, y = 3;
+    let sum = x+y, diff=x-y, prod=x*y, quot=x/y, rem=x%y;
+    document.getElementById('outputOperators').innerText =
+    `Suma: ${sum}, Resta: ${diff}, Multiplicación: ${prod}, División: ${quot}, Módulo: ${rem}`;
+}
+</script>
+
+<p><strong>Comparación y Lógica</strong></p>
+<p id="outputComparison" class="output"></p>
+<button onclick="runComparison()">Ejecutar</button>
+<script>
+function runComparison() {
+    let a=5, b=7;
+    let result = `a==b: ${a==b}, a!=b: ${a!=b}, a===b: ${a===b}, a>b: ${a>b}`;
+    document.getElementById('outputComparison').innerText = result;
+}
+</script>
+
+<p><strong>Asignación y Unarios</strong></p>
+<p id="outputAssign" class="output"></p>
+<button onclick="runAssignOperators()">Ejecutar</button>
+<script>
+function runAssignOperators() {
+    let x=10;
+    x+=5; x--; x++;
+    document.getElementById('outputAssign').innerText = `Resultado final de x: ${x}`;
+}
+</script>
+
+<p><strong>Tipo de dato (typeof)</strong></p>
+<p id="outputTypeof" class="output"></p>
+<button onclick="runTypeof()">Ejecutar</button>
+<script>
+function runTypeof() {
+    let num=42, name="John";
+    document.getElementById('outputTypeof').innerText =
+    `num: ${typeof num}, name: ${typeof name}`;
+}
+</script>
+</section>
+
+<!-- ====================================================== -->
+<section>
+<h2>3. Condicionales</h2>
+
+<p><strong>If / else</strong></p>
+<p id="outputIf" class="output"></p>
+<button onclick="runIfExample()">Ejecutar</button>
+<script>
+function runIfExample() {
+    let age=25;
+    let message = age>=18 ? "You are an adult." : "You are a minor.";
+    document.getElementById('outputIf').innerText = message;
+}
+</script>
+
+<p><strong>Switch</strong></p>
+<p id="outputSwitch" class="output"></p>
+<button onclick="runSwitchExample()">Ejecutar</button>
+<script>
+function runSwitchExample() {
+    let day="December";
+    let msg="";
+    switch(day){
+        case "December": msg="Christmas month"; break;
+        case "November": msg="Thanksgiving month"; break;
+        default: msg="Regular month";
+    }
+    document.getElementById('outputSwitch').innerText = msg;
+}
+</script>
+</section>
+
+<!-- ====================================================== -->
+<section>
+<h2>4. Bucles</h2>
+
+<p><strong>For</strong></p>
+<p id="outputFor" class="output"></p>
+<button onclick="runForLoop()">Ejecutar</button>
+<script>
+function runForLoop() {
+    let result='';
+    for(let i=1;i<=5;i++){ result += i + ' '; }
+    document.getElementById('outputFor').innerText = result;
+}
+</script>
+
+<p><strong>While</strong></p>
+<p id="outputWhile" class="output"></p>
+<button onclick="runWhileLoop()">Ejecutar</button>
+<script>
+function runWhileLoop() {
+    let limit=10, a=0, result='';
+    while(a<=limit){ result+=a+' '; a++; }
+    document.getElementById('outputWhile').innerText=result;
+}
+</script>
+
+<p><strong>Do...While</strong></p>
+<p id="outputDoWhile" class="output"></p>
+<button onclick="runDoWhileLoop()">Ejecutar</button>
+<script>
+function runDoWhileLoop() {
+    let roll=1, result='';
+    do{ result+="Rolled "+roll+" "; roll++; } while(roll<4);
+    document.getElementById('outputDoWhile').innerText=result;
+}
+</script>
+</section>
+
+<!-- ====================================================== -->
+<section>
+<h2>5. Funciones</h2>
+
+<p><strong>Función nombrada</strong></p>
+<p id="outputFunc1" class="output"></p>
+<button onclick="runNamedFunction()">Ejecutar</button>
+<script>
+function sayHello(){ return "Hello!"; }
+function runNamedFunction(){
+    document.getElementById('outputFunc1').innerText=sayHello();
+}
+</script>
+
+<p><strong>Función parametrizada</strong></p>
+<p id="outputFunc2" class="output"></p>
+<button onclick="runParamFunction()">Ejecutar</button>
+<script>
+function add(a,b){ return a+b; }
+function runParamFunction(){ 
+    document.getElementById('outputFunc2').innerText = add(3,4); 
+}
+</script>
+
+<p><strong>Arrow Function</strong></p>
+<p id="outputArrow" class="output"></p>
+<button onclick="runArrowFunction()">Ejecutar</button>
+<script>
+const arrowFunc=(x,y)=>x*y;
+function runArrowFunction(){ document.getElementById('outputArrow').innerText = arrowFunc(5,3);}
+</script>
+
+<p><strong>IIFE (Immediately Invoked Function Expression)</strong></p>
+<p id="outputIIFE" class="output"></p>
+<button onclick="runIIFE()">Ejecutar</button>
+<script>
+function runIIFE(){
+    (function(){ document.getElementById('outputIIFE').innerText="IIFE ejecutada!"; })();
+}
+</script>
+
+<p><strong>Closures</strong></p>
+<p id="outputClosure" class="output"></p>
+<button onclick="runClosure()">Ejecutar</button>
+<script>
+function runClosure(){
+    function outer(){ let outerVar="Hola desde outer"; return function(){ return outerVar; }; }
+    const inner = outer();
+    document.getElementById('outputClosure').innerText = inner();
+}
+</script>
+
+<p><strong>Hoisting</strong></p>
+<p id="outputHoist" class="output"></p>
+<button onclick="runHoisting()">Ejecutar</button>
+<script>
+function runHoisting(){
+    sayHelloHoist();
+    function sayHelloHoist(){ document.getElementById('outputHoist').innerText="Hola desde hoisting!"; }
+}
+</script>
+</section>
+
+<!-- ====================================================== -->
+<section>
+<h2>6. Eventos</h2>
+
+<p><strong>Click de botón</strong></p>
+<button id="btnClickEvent">Haz clic aquí</button>
+<p id="outputClick" class="output"></p>
+<script>
+document.getElementById('btnClickEvent').addEventListener('click', ()=>{
+    document.getElementById('outputClick').innerText = "¡Botón clickeado!";
+});
+</script>
+
+<p><strong>Mouseover / Mouseout</strong></p>
+<div id="mouseDiv" style="width:200px;height:100px;background:lightblue;text-align:center;line-height:100px;">Pasa el mouse</div>
+<script>
+const mouseDiv=document.getElementById('mouseDiv');
+mouseDiv.addEventListener('mouseover', ()=>{ mouseDiv.style.background='lightgreen'; });
+mouseDiv.addEventListener('mouseout', ()=>{ mouseDiv.style.background='lightblue'; });
+</script>
+
+<p><strong>Keydown</strong></p>
+<input type="text" id="keyInput" placeholder="Presiona una tecla">
+<p id="outputKey" class="output"></p>
+<script>
+document.getElementById('keyInput').addEventListener('keydown', (e)=>{
+    document.getElementById('outputKey').innerText = `Key pressed: ${e.key}`;
+});
+</script>
+
+<p><strong>Change</strong></p>
+<input type="text" id="changeInput" placeholder="Cambia este valor">
+<p id="outputChange" class="output"></p>
+<script>
+document.getElementById('changeInput').addEventListener('change', (e)=>{
+    document.getElementById('outputChange').innerText = `Nuevo valor: ${e.target.value}`;
+});
+</script>
+
+<p><strong>Formulario (submit)</strong></p>
+<form id="demoForm">
+<label>Nombre:</label><input type="text" id="formName"><br>
+<label>Email:</label><input type="email" id="formEmail"><br>
+<input type="submit" value="Enviar">
+</form>
+<p id="formOutput" class="output"></p>
+<script>
+document.getElementById('demoForm').addEventListener('submit', function(event){
+    event.preventDefault();
+    let name = document.getElementById('formName').value;
+    let email = document.getElementById('formEmail').value;
+    if(name==='' || email===''){
+        document.getElementById('formOutput').innerText = "Por favor completa todos los campos.";
+        return;
+    }
+    document.getElementById('formOutput').innerText = `Formulario enviado con éxito: ${name}, ${email}`;
+});
+</script>
+</section>
+
+</body>
+</html>
