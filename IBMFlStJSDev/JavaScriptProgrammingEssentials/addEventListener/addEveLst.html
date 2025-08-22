@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos en JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    section { border: 1px solid #444; border-radius: 8px; padding: 15px; margin-bottom: 20px; background: #f9f9f9; }
+    h2, h3 { margin-top: 0; }
+    .area { width: 200px; height: 200px; margin: 10px 0; background-color: lightcoral; }
+    .output { margin-top: 8px; font-weight: bold; color: darkblue; }
+  </style>
+</head>
+<body>
+  <h1>Ejemplos de Eventos en JavaScript</h1>
+
+  <!-- 1. Mouse events -->
+  <section>
+    <h2>1. Mouse Events</h2>
+
+    <!-- 1.1 Click event -->
+    <h3>1.1 Click Event</h3>
+    <button id="clickButton">Click Me!</button>
+    <p id="clickOutput" class="output"></p>
+
+    <!-- 1.2 Mousemove event -->
+    <h3>1.2 Mousemove Event</h3>
+    <div id="moveArea" class="area"></div>
+    <p id="moveOutput" class="output"></p>
+  </section>
+
+  <!-- 2. Keyboard events -->
+  <section>
+    <h2>2. Keyboard Events</h2>
+
+    <!-- 2.1 Keyup & Keydown -->
+    <h3>2.1 Keyup and Keydown</h3>
+    <input type="text" id="keyInput" placeholder="Escribe algo">
+    <p id="keyOutput" class="output"></p>
+
+    <!-- 2.2 Keypress -->
+    <h3>2.2 Keypress</h3>
+    <input type="text" id="pressInput" placeholder="Presiona una tecla">
+    <p id="pressOutput" class="output"></p>
+  </section>
+
+  <!-- 3. Submit events -->
+  <section>
+    <h2>3. Submit Events</h2>
+
+    <!-- 3.1 Submit -->
+    <h3>3.1 Submit Event</h3>
+    <form id="myForm">
+      <input type="text" id="formInput" placeholder="Escribe y envía">
+      <input type="submit" value="Submit">
+    </form>
+    <p id="formOutput" class="output"></p>
+
+    <!-- 3.2 Change -->
+    <h3>3.2 Change Event</h3>
+    <input type="text" id="changeInput" placeholder="Escribe y cambia de foco">
+    <p id="changeOutput" class="output"></p>
+
+    <!-- 3.3 Focus & Blur -->
+    <h3>3.3 Focus & Blur</h3>
+    <input type="text" id="focusInput" placeholder="Click aquí">
+    <p id="focusOutput" class="output"></p>
+  </section>
+
+  <!-- 4. Window events -->
+  <section>
+    <h2>4. Window Events</h2>
+
+    <!-- 4.1 Load -->
+    <h3>4.1 Load Event</h3>
+    <p id="loadOutput" class="output"></p>
+
+    <!-- 4.2 Resize -->
+    <h3>4.2 Resize Event</h3>
+    <p id="resizeOutput" class="output"></p>
+
+    <!-- 4.3 Scroll -->
+    <h3>4.3 Scroll Event</h3>
+    <div style="height: 600px; background-color: lightblue;">
+      Desplázate hacia abajo para disparar el evento scroll.
+    </div>
+    <p id="scrollOutput" class="output"></p>
+  </section>
+
+  <script>
+    // ============================
+    // 1. Mouse Events
+    // ============================
+    const clickButton = document.getElementById('clickButton');
+    const clickOutput = document.getElementById('clickOutput');
+    clickButton.addEventListener('click', () => {
+      clickOutput.textContent = "✅ Button clicked!";
+    });
+
+    const moveArea = document.getElementById('moveArea');
+    const moveOutput = document.getElementById('moveOutput');
+    moveArea.addEventListener('mousemove', (event) => {
+      moveOutput.textContent = `🖱️ X: ${event.clientX}, Y: ${event.clientY}`;
+    });
+
+    // ============================
+    // 2. Keyboard Events
+    // ============================
+    const keyInput = document.getElementById('keyInput');
+    const keyOutput = document.getElementById('keyOutput');
+    keyInput.addEventListener('keydown', () => {
+      keyOutput.textContent = "⌨️ Key pressed down!";
+    });
+    keyInput.addEventListener('keyup', () => {
+      keyOutput.textContent = "⬆️ Key released!";
+    });
+
+    const pressInput = document.getElementById('pressInput');
+    const pressOutput = document.getElementById('pressOutput');
+    pressInput.addEventListener('keypress', () => {
+      pressOutput.textContent = "🔤 Key pressed!";
+    });
+
+    // ============================
+    // 3. Submit & Form Events
+    // ============================
+    const form = document.getElementById('myForm');
+    const formOutput = document.getElementById('formOutput');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // evita que la página recargue
+      formOutput.textContent = "📨 Form submitted!";
+    });
+
+    const changeInput = document.getElementById('changeInput');
+    const changeOutput = document.getElementById('changeOutput');
+    changeInput.addEventListener('change', () => {
+      changeOutput.textContent = `✏️ Value changed to: ${changeInput.value}`;
+    });
+
+    const focusInput = document.getElementById('focusInput');
+    const focusOutput = document.getElementById('focusOutput');
+    focusInput.addEventListener('focus', () => {
+      focusOutput.textContent = "👀 Input focused";
+    });
+    focusInput.addEventListener('blur', () => {
+      focusOutput.textContent = "🚪 Input blurred";
+    });
+
+    // ============================
+    // 4. Window Events
+    // ============================
+    const loadOutput = document.getElementById('loadOutput');
+    window.addEventListener('load', () => {
+      loadOutput.textContent = "🌍 Page and all resources loaded!";
+    });
+
+    const resizeOutput = document.getElementById('resizeOutput');
+    window.addEventListener('resize', () => {
+      resizeOutput.textContent = "📏 Window resized!";
+    });
+
+    const scrollOutput = document.getElementById('scrollOutput');
+    window.addEventListener('scroll', () => {
+      scrollOutput.textContent = "📜 Document scrolled!";
+    });
+  </script>
+</body>
+</html>

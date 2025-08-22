@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo preventDefault()</title>
+</head>
+<body>
+  <h1>Comparación de formularios</h1>
+
+  <!-- Formulario SIN preventDefault -->
+  <h2>1. Sin preventDefault()</h2>
+  <form id="form1">
+    <input type="text" placeholder="Escribe algo" required>
+    <button type="submit">Enviar</button>
+  </form>
+  <p><em>👉 Este formulario se recarga al enviar.</em></p>
+
+  <hr>
+
+  <!-- Formulario CON preventDefault -->
+  <h2>2. Con preventDefault()</h2>
+  <form id="form2">
+    <input type="text" placeholder="Escribe algo" required>
+    <button type="submit">Enviar</button>
+  </form>
+  <p><em>👉 Este formulario NO se recarga, muestra un mensaje.</em></p>
+
+  <script>
+    // --- Formulario 1: SIN preventDefault
+    document.getElementById("form1").addEventListener("submit", function(e) {
+      console.log("Formulario 1 enviado (pero la página se recargará)");
+      // 🚫 no usamos preventDefault, así que se recarga
+    });
+
+    // --- Formulario 2: CON preventDefault
+    document.getElementById("form2").addEventListener("submit", function(e) {
+      e.preventDefault(); // ✅ evita la recarga
+      alert("Formulario 2 enviado, pero sin recargar la página 😃");
+      console.log("Formulario 2 enviado sin recarga");
+    });
+  </script>
+</body>
+</html>
