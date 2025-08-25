@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Hoja de Trucos: Objetos en JavaScript</title>
+<style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h2 { margin-top: 40px; color: #2F4F4F; }
+    .section { margin-bottom: 30px; }
+    .description { margin: 10px 0; font-style: italic; color: #555; }
+    pre { background-color: #f4f4f4; padding: 10px; overflow-x: auto; }
+    button { margin-top: 5px; padding: 5px 10px; cursor: pointer; background-color: #007BFF; color: white; border: none; border-radius: 4px; }
+    #output { background: #222; color: #0f0; padding: 10px; margin-top: 10px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+
+<h1>Hoja de Trucos: Objetos en JavaScript</h1>
+
+<div class="section">
+    <h2>Clases</h2>
+    <p class="description">Las clases son una forma de crear planos o plantillas para objetos. Definen la estructura y el comportamiento de los objetos de esa clase.</p>
+    <pre id="code1">
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+const person1 = new Person("John", "Doe");
+console.log(person1.getFullName()); // Output: "John Doe"
+    </pre>
+    <button onclick="runCode(1)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Objetos Constructor</h2>
+    <p class="description">Los objetos son instancias de clases o pueden ser creados como objetos independientes sin una clase. Pueden tener propiedades y métodos.</p>
+    <pre id="code2">
+class Car {
+  constructor(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+  startEngine() {
+    console.log(`The ${this.make} ${this.model}'s engine is running.`);
+  }
+}
+const myCar = new Car("Toyota", "Camry", 2022);
+myCar.startEngine();
+    </pre>
+    <button onclick="runCode(2)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Literales de Objetos</h2>
+    <p class="description">Los literales de objetos son una forma de crear objetos ad-hoc sin definir una clase.</p>
+    <pre id="code3">
+const person = {
+  firstName: "Alice",
+  lastName: "Johnson",
+  getFullName: function() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+};
+console.log(person.getFullName());
+    </pre>
+    <button onclick="runCode(3)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Constructor de Funciones</h2>
+    <p class="description">Un constructor de funciones es una función regular de JavaScript que se utiliza para crear e inicializar objetos. Es una convención nombrar a los constructores de funciones con una letra mayúscula inicial.</p>
+    <pre id="code4">
+function Car(make, model) {
+  this.make = make;
+  this.model = model;
+}
+const car1 = new Car("Toyota", "Camry");
+const car2 = new Car("Honda", "Civic");
+console.log('Car1 details are', car1);
+console.log('Car2 details are', car2);
+    </pre>
+    <button onclick="runCode(4)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Notación de Punto</h2>
+    <p class="description">La notación de punto es una forma de acceder a las propiedades de un objeto.</p>
+    <pre id="code5">
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30
+};
+console.log(person.firstName);
+console.log(person.lastName);
+console.log(person.age);
+    </pre>
+    <button onclick="runCode(5)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Notación de Corchetes</h2>
+    <p class="description">La notación de corchetes es útil cuando los nombres de las propiedades contienen caracteres especiales o espacios.</p>
+    <pre id="code6">
+const person = {
+  "first name": "John",
+  "last name": "Doe",
+  age: 30
+};
+console.log(person["first name"]);
+console.log(person["last name"]);
+console.log(person["age"]);
+    </pre>
+    <button onclick="runCode(6)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Arrays de Objetos</h2>
+    <p class="description">Un array de objetos es una colección de múltiples objetos almacenados dentro de un único contenedor de array.</p>
+    <pre id="code7">
+const students = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 22 },
+  { name: "Charlie", age: 28 }
+];
+console.log(students);
+    </pre>
+    <button onclick="runCode(7)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Acceder a un Array de Objetos</h2>
+    <p class="description">Puedes acceder a los elementos dentro de un array de objetos utilizando el índice del array y la notación de punto.</p>
+    <pre id="code8">
+const students = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 22 },
+  { name: "Charlie", age: 28 }
+];
+console.log(students[0].name);
+console.log(students[2].age);
+    </pre>
+    <button onclick="runCode(8)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Iterando a Través de un Arreglo de Objetos</h2>
+    <p class="description">La iteración de objetos a través de arreglos incluye bucles for y métodos de arreglo.</p>
+    <pre id="code9">
+const students = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 22 },
+  { name: "Charlie", age: 28 }
+];
+for (let i = 0; i < students.length; i++) {
+  console.log(students[i].name);
+}
+    </pre>
+    <button onclick="runCode(9)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Agregar Objetos (push)</h2>
+    <pre id="code10">
+//Adding Elements
+const students = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 22 },
+  { name: "Charlie", age: 28 }
+];
+students.push({ name: "David", age: 20 });
+console.log(students);
+    </pre>
+    <button onclick="runCode(10)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Eliminar Objetos (pop)</h2>
+    <pre id="code11">
+//Removing Elements
+const students = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 22 },
+  { name: "Charlie", age: 28 }
+];
+const removedStudent = students.pop();
+console.log(students);
+    </pre>
+    <button onclick="runCode(11)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Filtrado y Mapeo de Arreglos de Objetos</h2>
+    <pre id="code12">
+const students = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 22 },
+  { name: "Charlie", age: 28 }
+];
+const adults = students.filter(student => student.age >= 23);
+const studentNames = students.map(student => student.name);
+console.log(adults);
+console.log(studentNames);
+    </pre>
+    <button onclick="runCode(12)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Mapeo de Arreglos de Objetos</h2>
+    <pre id="code13">
+const employees = [
+  { name: "Alice", age: 35 },
+  { name: "Bob", age: 32 },
+  { name: "Charlie", age: 38 }
+];
+const employee = employees.map((employee) => {
+  return employee;
+});
+console.log(employee);
+    </pre>
+    <button onclick="runCode(13)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Buscando Objetos</h2>
+    <pre id="code14">
+const employees = [
+  { name: "Alice", age: 35 },
+  { name: "Bob", age: 32 },
+  { name: "Charlie", age: 38 }
+];
+const employee = employees.find(employee => employee.name === "Charlie");
+console.log(employee.age);
+    </pre>
+    <button onclick="runCode(14)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Array Anidado de Objetos</h2>
+    <pre id="code15">
+let arrayOfObjects = [
+  {
+    name: 'John',
+    age: 25,
+    hobbies: ['Reading', 'Traveling'],
+    address: {
+      street: '123 Main St',
+      city: 'New York',
+      zip: '10001'
+    }
+  },
+  {
+    name: 'Alice',
+    age: 30,
+    skills: ['JavaScript', 'React', 'Node.js'],
+    projects: [
+      { title: 'Project A', completed: true },
+      { title: 'Project B', completed: false }
+    ]
+  },
+  {
+    title: 'Special Object',
+    data: [1, 2, 3],
+    metadata: { key: 'value' }
+  },
+  {
+  },
+  {
+    anotherObject: true,
+    nestedArrays: [
+      [1, 2, 3],
+      ['a', 'b', 'c']
+    ],
+    additionalProperty: 'Extra'
+  }
+];
+console.log(arrayOfObjects);
+    </pre>
+    <button onclick="runCode(15)">Run Code</button>
+</div>
+
+<div class="section">
+    <h2>Acceder al Array Anidado</h2>
+    <pre id="code16">
+// Accessing properties of the first object
+console.log(arrayOfObjects[0].name);
+console.log(arrayOfObjects[0].hobbies[0]);
+// Accessing properties of the second object
+<script src="script.js"></script>
+</body>
