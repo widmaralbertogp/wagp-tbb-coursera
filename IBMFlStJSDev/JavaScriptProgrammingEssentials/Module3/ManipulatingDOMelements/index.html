@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maniipulating DOM elements</title>
+    <style>
+        div
+        {
+            border: 2px solid blue; /* Un borde para delimitar la sección */
+            padding: 15px; /* Espacio interior */
+            margin-bottom: 20px; /* Espacio debajo de la sección */
+            background-color: #f0f0f0; /* Un fondo claro */
+        }
+    </style>
+</head>
+<body>
+    <h4>This [h1] and [p] is for the getElementsByID example</h4>
+    <h1 id="main-heading">Welcome to the Example page</h1>
+    <p id="content-paragraph">This is some content</p>
+
+    <h4>This [p] are for the getElementsByClassName example</h4>
+    <p class="highlighted">This is a highlighted paragraph</p>
+    <p class="highlighted">This is another highlighted</p>    
+    <p>This is a regular paragraph</p>
+
+    <h4>This [li] are for the getElementsByClassName example</h4>
+    <ul id="my-list">
+        <li>Vehicle</li>
+        <li>Car</li>
+        <li>Pick-up</li>
+        <li>Bus</li>
+    </ul>
+    <button id="pluss-list">Click me for add a [li] element</button>
+    <button id="less-list">Click me for deleted a [li] element</button>
+    <button id="clon-list">Click me for Cloning element</button>
+    <h3>Div for Output 1</h3>
+    <div id="OutPut"></div>
+    <h3>Div for Output 2</h3>
+    <p id="2OutPut2">Here</p>
+
+    <p id="my-paragraph">This is some text.</p>
+    <img id="my-image" src="bullet.png" alt="A bullet">
+    <button id="my-button">Click me</button>
+    <div id="my-finalcontainer">
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+    </div>
+    <button id="changedBtn">Click me for change element positions </button>
+    <!-- JavaScript code-->
+    <script>
+        const headingElement = document.getElementById('main-heading').textContent;
+        document.getElementById('OutPut').innerText = headingElement;
+
+        const highlightedElements = document.getElementsByClassName('highlighted'); 
+        for (let i = 0; i < highlightedElements.length; i++)
+        {
+            highlightedElements[i].textContent = 'Wagp changed all paragraph!';
+        }
+
+        const Undrlist = document.getElementsByTagName('p');
+        // Output only at console
+        console.log(Undrlist);
+        console.log(Undrlist[0]);
+        console.log(Undrlist[1]);
+
+
+        // QUERYSELECTOR example
+        //by class
+        const elementByClass = document.querySelector('.highlighted');
+        console.log(elementByClass);
+        // by IDs
+        const elementByIDs = document.querySelector('#content-paragraph');
+        console.log(elementByIDs);
+        //By Tag
+        const elementByTags = document.querySelector('div');
+        console.log(elementByTags);
+
+        // Changing content
+        const paragraph = document.getElementById('my-paragraph');
+        paragraph.textContent = 'Text is updated by wagp.'
+
+        // Changing attributes
+        const image = document.getElementById('my-image');
+        image.setAttribute('src', 'IbmLogo.png');
+
+        
+        //adding and removing elemrnts
+        const list = document.getElementById('my-list');
+
+     
+ document.getElementById('pluss-list').addEventListener('click', () => {
+      alert('An &lt;li&gt; element is going to be ADDED');
+      const newItem = document.createElement('li');
+      newItem.textContent = 'Class 5';
+      list.appendChild(newItem);
+    });
+
+    document.getElementById('less-list').addEventListener('click', () => {
+      if (list.lastElementChild) {
+        const removed = list.lastElementChild;
+        list.removeChild(removed);
+        alert('Deleted: ' + removed.textContent);
+      } else {
+        alert('There are no <li> elements to delete.');
+      }
+    });
+
+        //Handling events
+        //less-list
+        const button = document.getElementById('my-button');
+        button.addEventListener('click', function(){alert('Button Clicked!');})
+
+    //Reordering elements    
+    document.getElementById('changedBtn').addEventListener('click', () => {
+    const container = document.getElementById('my-finalcontainer');
+    const secondParagraph = container.querySelector('p:nth-child(2)'); 
+    container.insertBefore(secondParagraph, container.querySelector('p'));
+    });
+
+    /// Cloning elements
+        document.getElementById('clon-list').addEventListener('click', () => {
+            const clolist = document.getElementById('my-list');
+            const firstItem1 = clolist.querySelector('li');  // First Element
+            const firstItem2 = clolist.lastElementChild;    // Last Element
+            const clonedItem1 = firstItem1.cloneNode(true);
+            const clonedItem2 = firstItem2.cloneNode(true);
+            clolist.appendChild(clonedItem1);
+            clolist.appendChild(clonedItem2);
+       }); 
+
+    </script>
+</body>
+</html>
