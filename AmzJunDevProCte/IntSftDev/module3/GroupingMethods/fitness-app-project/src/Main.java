@@ -2,7 +2,8 @@ public class Main {
     public static void main(String[] args) throws Exception 
     {
     
-     /*  Example 1 without classes
+     /* 
+      Example 1 without classes
 
         double weightInPounds1 = 154.0;
         double heightInInches1 = 70.0;

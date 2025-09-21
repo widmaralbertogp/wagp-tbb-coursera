@@ -8,9 +8,6 @@ const elementByID = document.querySelectorAll('#my-paragraph');
 // Log the selected element to the console
 console.log(elementByID);
 
-
-
-
 // Select all <p> elements using querySelectorAll
 const elementsByTag = document.querySelectorAll('p');
 

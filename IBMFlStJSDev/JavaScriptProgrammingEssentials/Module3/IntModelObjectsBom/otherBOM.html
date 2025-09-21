@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo BOM Completo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { margin-top: 30px; color: #0D1B2A; }
+    button { margin: 5px; padding: 8px 12px; }
+    #output { margin-top: 20px; padding: 10px; border: 1px solid #ccc; min-height: 50px; background: #f9f9f9; }
+    .section { border-top: 2px solid #eee; padding-top: 10px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Browser Object Model (BOM) – Demo Interactivo</h1>
+
+  <div class="section">
+    <h2>Ventana / Global (window)</h2>
+    <button onclick="mostrarTamaño()">Mostrar tamaño ventana</button>
+    <button onclick="abrirVentana()">Abrir ventana</button>
+    <button onclick="cerrarVentana()">Cerrar ventana</button>
+    <button onclick="iniciarTimeout()">Timeout 2s</button>
+    <button onclick="iniciarInterval()">Iniciar Interval</button>
+    <button onclick="detenerInterval()">Detener Interval</button>
+  </div>
+
+  <div class="section">
+    <h2>Ubicación y navegación (location, history)</h2>
+    <button onclick="mostrarLocation()">Mostrar location</button>
+    <button onclick="irOpenAI()">Ir a OpenAI</button>
+    <button onclick="historyBack()">Atrás</button>
+    <button onclick="historyForward()">Adelante</button>
+  </div>
+
+  <div class="section">
+    <h2>Almacenamiento (localStorage / sessionStorage)</h2>
+    <button onclick="guardarLS()">Guardar LS</button>
+    <button onclick="leerLS()">Leer LS</button>
+    <button onclick="borrarLS()">Borrar LS</button>
+    <button onclick="guardarSS()">Guardar SS</button>
+    <button onclick="leerSS()">Leer SS</button>
+  </div>
+
+  <div class="section">
+    <h2>Cookies</h2>
+    <button onclick="crearCookie()">Crear cookie</button>
+    <button onclick="leerCookies()">Leer cookies</button>
+  </div>
+
+  <div class="section">
+    <h2>Navegador (navigator)</h2>
+    <button onclick="infoNavegador()">Info navegador</button>
+    <button onclick="geoLocalizar()">Geolocalizar</button>
+  </div>
+
+  <div class="section">
+    <h2>Pantalla (screen)</h2>
+    <button onclick="infoPantalla()">Info pantalla</button>
+  </div>
+
+  <div class="section">
+    <h2>Scroll</h2>
+    <button onclick="window.scrollTo({top:1000,behavior:'smooth'})">Scroll a 1000px</button>
+    <button onclick="window.scrollBy(0,200)">Scroll +200px</button>
+  </div>
+
+  <div class="section">
+    <h2>Eventos ventana</h2>
+    <button onclick="alert('Redimensiona la ventana para ver consola')">Resize test</button>
+  </div>
+
+  <div class="section">
+    <h2>Performance</h2>
+    <button onclick="medirPerformance()">Medir tiempo</button>
+  </div>
+
+  <div class="section">
+    <h2>MatchMedia</h2>
+    <button onclick="testMediaQuery()">Test MQ</button>
+  </div>
+
+  <div id="output">Resultados aquí...</div>
+
+  <script>
+    const output = document.getElementById("output");
+    let nuevaVentana, intervalId;
+
+    // Window
+    function mostrarTamaño(){ output.innerHTML = `Ancho: ${innerWidth}, Alto: ${innerHeight}`; }
+    function abrirVentana(){ nuevaVentana = open("https://example.com","_blank","width=400,height=300"); }
+    function cerrarVentana(){ if(nuevaVentana) nuevaVentana.close(); }
+    function iniciarTimeout(){ setTimeout(()=>alert("Hola después de 2s"),2000); }
+    function iniciarInterval(){ intervalId = setInterval(()=>console.log("tick"),1000); }
+    function detenerInterval(){ clearInterval(intervalId); }
+
+    // Location & History
+    function mostrarLocation(){ output.innerHTML = location.href; }
+    function irOpenAI(){ location.href = "https://www.openai.com"; }
+    function historyBack(){ history.back(); }
+    function historyForward(){ history.forward(); }
+
+    // Storage
+    function guardarLS(){ localStorage.setItem("user","Ana"); output.innerHTML="Guardado en LS"; }
+    function leerLS(){ output.innerHTML = localStorage.getItem("user") || "Nada en LS"; }
+    function borrarLS(){ localStorage.clear(); output.innerHTML="LS borrado"; }
+    function guardarSS(){ sessionStorage.setItem("token","abc123"); output.innerHTML="Guardado en SS"; }
+    function leerSS(){ output.innerHTML = sessionStorage.getItem("token") || "Nada en SS"; }
+
+    // Cookies
+    function crearCookie(){ document.cookie="username=widmar; path=/; max-age=3600"; output.innerHTML="Cookie creada"; }
+    function leerCookies(){ output.innerHTML = document.cookie; }
+
+    // Navigator
+    function infoNavegador(){ output.innerHTML = `UA: ${navigator.userAgent}<br>Plataforma: ${navigator.platform}<br>Online: ${navigator.onLine}`; }
+    function geoLocalizar(){ navigator.geolocation.getCurrentPosition(pos => output.innerHTML=`Lat: ${pos.coords.latitude}, Lng: ${pos.coords.longitude}`); }
+
+    // Screen
+    function infoPantalla(){ output.innerHTML = `Ancho: ${screen.width}, Alto: ${screen.height}, Disponible: ${screen.availWidth}x${screen.availHeight}`; }
+
+    // Eventos
+    addEventListener("resize", ()=>console.log("Ventana redimensionada"));
+    addEventListener("beforeunload", e => { e.preventDefault(); e.returnValue="¿Salir?"; });
+
+    // Performance
+    function medirPerformance(){
+      performance.mark("start");
+      setTimeout(()=>{
+        performance.mark("end");
+        performance.measure("task","start","end");
+        let m=performance.getEntriesByName("task")[0];
+        output.innerHTML=`Duración tarea: ${m.duration.toFixed(2)} ms`;
+      },500);
+    }
+
+    // MatchMedia
+    function testMediaQuery(){
+      const mq = matchMedia("(max-width:600px)");
+      output.innerHTML = mq.matches ? "Pantalla pequeña" : "Pantalla grande";
+    }
+  </script>
+</body>
+</html>

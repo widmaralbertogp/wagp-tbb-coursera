@@ -8,8 +8,9 @@ public class Media {
         this.creator = creator;
     }
 
+    //method to play the media item
     public void play()
     {
-        System.out.println("Play " + title + " by " + creator);
+        System.out.println("Playing " + title + " by " + creator);
     }
 }
