@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+  display: flex; /* Alinea los divs uno al lado del otro */
+  gap: 10px; /* Espacio entre los divs */
+}
+
+div {
+  background-color: lightblue; /* Fondo para que se vea el borde */
+  border: 2px solid blue; /* Borde visible */
+  border-radius: 10px; /* Redondea las esquinas */
+  padding: 20px; /* Espacio interior */
+  text-align: center;
+}
+    
+  </style>
+</head>
+<body>    
+  <form>
+    <h1>Naming Convention</h1>
+
+    <input type="checkbox" id="chk1" name="chk1" value="opt1">
+    <label for="chk1"> element.style.property</label><br>
+
+    <input type="checkbox" id="chk2" name="chk2" value="opt2">
+    <label for="chk2"> element.classList</label><br>
+
+    <input type="checkbox" id="chk3" name="chk3" value="opt3">
+    <label for="chk3"> element.setAttribute</label><br>
+
+    <input type="checkbox" id="chk4" name="chk4" value="opt4">
+    <label for="chk4"> element.style.cssText</label><br>
+
+    <input type="checkbox" id="chk5" name="chk5" value="opt5">
+    <label for="chk5"> element.style.setProperty</label><br>
+
+    <input type="checkbox" id="chk6" name="chk6" value="opt6">
+    <label for="chk6"> element.style.removeProperty</label><br>
+  </form>
+<div class="container">
+  <h5>descripcion</h5><br>
+  <div id="descro" style="margin-top:20px; font-weight:bold; color:blue;"></div>
+  <h5>Syntaxis</h5><br>
+  <div id="syntox" style="margin-top:20px; font-weight:bold; color:blue;"></div>
+  <h5>Resultado</h5><br>
+  <div id="resultado" style="margin-top:20px; font-weight:bold; color:blue;"></div>
+</div>
+  <button id="ejecutar" style="margin-top:20px;">Ejecutar acción</button>
+
+  <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const descro = document.getElementById('descro');
+    const syntox = document.getElementById('syntox');
+    const resultado = document.getElementById('resultado');
+    const ejecutarBtn = document.getElementById('ejecutar');
+
+    // Descripciones
+    const mtxdes = {
+      opt1: "Access and modify inline style",
+      opt2: "Add or remove CSS classes",
+      opt3: "Set an HTML attribute",
+      opt4: "Apply multiple CSS rules at once",
+      opt5: "Define custom CSS properties",
+      opt6: "Remove a CSS property"
+    };
+
+    // Syntax
+    const mtxsyn = {
+      opt1: "element.style.property = value;",
+      opt2: "element.classList.add('className');",
+      opt3: "element.setAttribute('attr', 'value');",
+      opt4: "element.style.cssText = 'color:red; font-size:20px';",
+      opt5: "element.style.setProperty('--var', 'value');",
+      opt6: "element.style.removeProperty('color');"
+    };
+
+    // Mensajes
+    const mensajes = {
+      opt1: "Usa 'element.style.property' para modificar estilos directamente.",
+      opt2: "Usa 'element.classList' para añadir o quitar clases CSS.",
+      opt3: "Usa 'element.setAttribute' para establecer atributos HTML.",
+      opt4: "Usa 'element.style.cssText' para aplicar varias reglas CSS en bloque.",
+      opt5: "Usa 'element.style.setProperty' para definir propiedades CSS personalizadas.",
+      opt6: "Usa 'element.style.removeProperty' para eliminar una propiedad CSS."
+    };
+
+    let opcionSeleccionada = null;
+
+    checkboxes.forEach(chk => {
+      chk.addEventListener('change', () => {
+        if (chk.checked) {
+          // Deshabilitar los demás
+          checkboxes.forEach(c => {
+            if (c !== chk) {
+              c.disabled = true;
+              c.checked = false;
+            }
+          });
+          // Guardar selección
+          opcionSeleccionada = chk.value;
+          // Mostrar información
+          descro.textContent = mtxdes[chk.value];
+          syntox.textContent = mtxsyn[chk.value];
+          resultado.textContent = mensajes[chk.value];
+        } else {
+          // Si se desmarca → resetear
+          checkboxes.forEach(c => c.disabled = false);
+          descro.textContent = "";
+          syntox.textContent = "";
+          resultado.textContent = "";
+          opcionSeleccionada = null;
+        }
+      });
+    });
+
+    // Botón ejecutar
+    ejecutarBtn.addEventListener('click', () => {
+      if (!opcionSeleccionada) {
+        alert("⚠️ Selecciona una opción primero");
+        return;
+      }
+
+      switch (opcionSeleccionada) {
+        case "opt1":
+          alert("Ejecutando código de style.property...");
+          document.body.style.backgroundColor = "lightyellow";
+          break;
+        case "opt2":
+          alert("Ejecutando código de classList...");
+          document.body.classList.add("highlighted");
+          break;
+        case "opt3":
+          alert("Ejecutando código de setAttribute...");
+          document.body.setAttribute("data-demo", "true");
+          break;
+        case "opt4":
+          alert("Ejecutando código de cssText...");
+          document.body.style.cssText = "background:lightblue; font-size:18px;";
+          break;
+        case "opt5":
+          alert("Ejecutando código de setProperty...");
+          document.body.style.setProperty("color", "darkred");
+          break;
+        case "opt6":
+          alert("Ejecutando código de removeProperty...");
+          document.body.style.removeProperty("background");
+          break;
+      }
+    });
+  </script>
+
+  <style>
+    .highlighted {
+      border: 5px solid red;
+      padding: 10px;
+    }
+  </style>
+</body>
+</html>

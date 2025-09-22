@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButton" onclick='colorear()'>element.style.property</button><br>
+    <button id="myButton" onclick='addx()'>element.classList.add(classname)</button><br>
+    <button id="myButton" onclick='rmox()'>element.classList.remove(classname)</button><br>
+    <div id="myDiv" class="active">This is a div</div>
+    <button id="myBtnToggle" onclick='togx()'>element.classList.togle(classname)</button>    
+    <h5>element.setAttribute Example</h5>
+    <p id="myParagraph" style="color: red;">This is a red Paragraph.</p>
+    <button id="myBtnSetAttbt" onclick='stat()'>element.setAttribute("Style," "property: value")</button>    
+
+    <h5>element.style.cssText Example</h5>
+    <p id="myText">This is a Paragraph.</p>
+    <button id="myBtnCssText" onclick='csstxt()'>element.style.cssText = "property1: value1; property2: value2;" </button>    
+
+    <h5>element.style.setProperty Example</h5>
+    <p id="mySPText">This is a Paragraph.</p>
+    <button id="myBtnSetPrt" onclick='setPrt()'>element.style.setProperty("property", "value", "important")</button>    
+
+    <h5>element.style.removeProperty Example</h5>
+    <p id="myRMprt" style="color: blue; font-size: 18px;">This is a Paragraph.</p>
+    <button id="myBtnremPrt" onclick='remPrt()'>element.style.removeProperty("property")</button>    
+    <script>
+        function colorear() 
+        {
+            const button = document.getElementById("myButton");
+            button.style.backgroundColor = "skyblue";
+            button.style.color = "white";
+            button.style.fontSize = "20px";
+        };
+
+        function togx()
+        {
+            const div = document.getElementById("myDiv");
+            const button = document.getElementById("myBtnToggle")
+            function toggleClassAndColor()
+            {
+                div.classList.toggle("active");
+                div.classList.toggle("inactive");
+
+                //check if the "active" class is present and change te background cold accordingly
+                if(div.classList.contains("active"))
+                {
+                    div.textContent = "La clase elemento: Esta activa";
+                    div.style.backgroundColor = "green";
+                }
+                else
+                {
+                    div.textContent = "La clase elemento: No esta activa";
+                    div.style.backgroundColor = "yellow";
+                }
+            }
+            button.addEventListener("click", toggleClassAndColor);            
+        }
+        function stat()
+        {
+            const paragraph = document.getElementById("myParagraph");
+            paragraph.setAttribute("style", "color:blue; font-size: 18px");
+        }
+
+        function csstxt()
+        {
+            const text = document.getElementById("myText");
+            text.style.cssText = "color: green; font-weight: bold;";
+        }
+
+        function setPrt()
+        {
+            const paragraph = document.getElementById("mySPText");
+            paragraph.style.setProperty("color","purple","important");
+        }
+        function remPrt()
+        {
+            const paragraph = document.getElementById("myRMprt");
+            paragraph.style.removeProperty("font-size");
+            paragraph.style.removeProperty("color");
+        }
+
+    </script>
+</body>
+</html>
