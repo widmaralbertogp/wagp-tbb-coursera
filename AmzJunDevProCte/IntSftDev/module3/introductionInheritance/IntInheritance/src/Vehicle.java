@@ -9,7 +9,7 @@ public class Vehicle {
         System.out.println("The vehicle is accelerate up");   
         speed = 10;
     }
-    public void breck()
+    public void brake()
     {
         System.out.println("The vehicle velocity is down");   
         speed = 0;
