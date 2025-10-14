@@ -8,7 +8,7 @@ public class CoffeeMachine {
             System.out.println("1. Espresso");
             System.out.println("2. Latte");
             System.out.println("3. Exit");
-            System.out.println("Enter your choice [1,2, or 3]: ");
+            System.out.print("Enter your choice [1,2, or 3]: ");
             int choice = keyBoard.nextInt();
             switch (choice) {
                 case 1:
@@ -17,10 +17,10 @@ public class CoffeeMachine {
                     // Initialize the  price of espresso per serving
                     double espressoPrice = 2.50;
                     //Ask the user for the type of roast and store it in espressoRoast
-                    System.out.println("What roast would you like (light, medium, dark): ");
+                    System.out.print("What roast would you like (light, medium, dark): ");
                     String espressoRoast = keyBoard.next();
                     //Ask the user for the number of shots and store it in numberOfShots
-                    System.out.println("How many servings would you like? (type a number please): ");
+                    System.out.print("How many servings would you like? (type a number please): ");
                     int numberOfShots = keyBoard.nextInt();
                     // TODO 8: Create an object of Espresso class using the parameterized constructor
                     // TODO 8: Pass the espressoName, espressoRoast, espressoPrice, and numberOfShots as arguments in the correct order
@@ -40,18 +40,18 @@ public class CoffeeMachine {
                     // Initialize the price of latte
                     double lattePrice = 3.50;
                     // Ask the user for the type of roast and store it in latteRoast
-                    System.out.println("What Roast would you like? (light, medium, dark): ");
+                    System.out.print("What Roast would you like? (light, medium, dark): ");
                     String latteRoast = keyBoard.next();
                     // Ask the user for the milk type and store it in milkType
-                    System.out.println("What milk type would you like? (whole, skim, almond, oat): ");
+                    System.out.print("What milk type would you like? (whole, skim, almond, oat): ");
                     String milkType = keyBoard.next();
                     // Ask the user if they want syrup or not
-                    System.out.println("Would you like syrup? (yes/no): ");
+                    System.out.print("Would you like syrup? (yes/no): ");
                     String syrupWanted = keyBoard.next();
                     String syrupFlavor = "no";
                     // if syrupWanted if yes, ask the user for the syrup flavor and store it in syrupFlavor
                     if (syrupWanted.equals("yes")) {
-                        System.out.println("Which flavor would you like? (vanilla, caramel or hazelnut): ");
+                        System.out.print("Which flavor would you like? (vanilla, caramel or hazelnut): ");
                         syrupFlavor = keyBoard.next();
                     }
                     // TODO 20: Create an object of Latte class using the parameterized constructor

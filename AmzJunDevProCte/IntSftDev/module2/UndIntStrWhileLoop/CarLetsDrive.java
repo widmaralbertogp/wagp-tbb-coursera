@@ -51,8 +51,7 @@ public class CarLetsDrive {
                 System.out.println("Cannot accelerate while is off or in Park (P)  gear.");
             }
             break;
-        case 4:
-            
+        case 4:            
             if (isEngineOn && !gear.equals("P") || gear.equals("R")) 
             {
                 speed -= 10;

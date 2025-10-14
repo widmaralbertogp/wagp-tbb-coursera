@@ -1,0 +1,18 @@
+const book =
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "puclicationYear": 1925,
+       
+    
+        "title": "To kill a Mockingbird",
+        "author": "Harper Lee",
+        "puclicationYear": 1960,  
+    
+    
+        "title": "1984",
+        "author": "George Orwell",
+        "puclicationYear": 1949
+    }
+
+console.log(book);

@@ -1,15 +1,32 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome! User: ");
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        // Create a new book object
+        Book greatGatsbyBook = new Book("The Great Gatzby","F. Scott Fitsgerald",180);
+        
+        // Create a new Movie object
+        Movie inceptionMovie = new Movie("Inception","Chistopher Nolan",148);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Create a new Music object
+        Music imagineMusic = new Music("Imagine","John Lennon","Rock");
+
+        // Create a MediaLibrary object
+        MediaLibrary library = new MediaLibrary();
+
+        // Add the media items to the library and store the returned objets
+        System.out.println("");
+        System.out.println("----------------- Adding new media items ----------");
+        Media addedBook = library.addMedia(greatGatsbyBook);
+        Media addedMovie = library.addMedia(inceptionMovie);
+        Media addedMusic = library.addMedia(imagineMusic);
+        System.out.println("---------------------------------------------------");
+        System.out.println("");
+        // Play the media items using the returned objects
+        System.out.println("----------------- Playing the media items ----------");
+        library.playMedia(addedBook); // calls the play method in the Book class
+        library.playMedia(addedMovie);// calls the play method in the Movie class
+        library.playMedia(addedMusic);// calls the play method in the Music class
+        System.out.println("---------------------------------------------------");
     }
 }

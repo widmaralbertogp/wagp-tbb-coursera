@@ -1,4 +1,5 @@
-public class Main{
+public class Main
+{
     //Area of square = side * side
     static double sideOfSquare;
 
@@ -14,7 +15,6 @@ public class Main{
         return sideOfSquare * sideOfSquare;
     }
     
-
     // the main method
     public static void main(String[] args)
     {
