@@ -1,9 +1,8 @@
-const book =
-    {
-        "title": "The Great Gatsby",
+{
+	"tile": "The Great Gatsby",
         "author": "F. Scott Fitzgerald",
         "puclicationYear": 1925,
-       
+      
     
         "title": "To kill a Mockingbird",
         "author": "Harper Lee",
@@ -13,6 +12,4 @@ const book =
         "title": "1984",
         "author": "George Orwell",
         "puclicationYear": 1949
-    }
-
-console.log(book);
+}

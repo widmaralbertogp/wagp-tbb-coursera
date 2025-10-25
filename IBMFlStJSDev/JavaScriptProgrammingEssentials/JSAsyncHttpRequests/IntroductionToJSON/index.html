@@ -6,15 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="hola">Hi</p>
-     <script>
-        const person = {
-            name: "John Doe",
-            age: 30,
-            city: "New York",
-            sayHello: function() {console.log("Hello, my name is " + this.name);
-            }
-        }
+    <script>
+        const person = {name: "John Doe",age: 30,city: "New York",sayHello: function(){console.log('Hello, my name is ' + this.name);}};
+        console.log(person.sayHello());
     </script>
 </body>
 </html>

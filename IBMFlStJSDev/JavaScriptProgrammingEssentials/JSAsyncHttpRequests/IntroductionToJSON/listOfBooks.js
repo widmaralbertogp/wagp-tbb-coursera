@@ -2,7 +2,7 @@
 function fetchBooks()
 {
     //Fetch the json data form the  file
-    fetch('listOfBooks.json')
+    fetch('listOfBook.json')
     .then(response => response.json())
     .then(data => {
         // Data contains the JSON content
