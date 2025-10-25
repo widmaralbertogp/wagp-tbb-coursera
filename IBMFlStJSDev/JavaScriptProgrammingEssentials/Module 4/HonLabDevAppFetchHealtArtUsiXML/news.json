@@ -1,0 +1,38 @@
+{
+  "articles": [
+    {
+      "title": "Avances en inteligencia artificial",
+      "author": "María López",      
+      "category": "Tecnología",
+      "content": "Investigadores han desarrollado un nuevo modelo de IA que mejora el reconocimiento de imágenes."
+    },
+    {
+      "title": "Economía global en recuperación",
+      "author": "Juan Pérez",
+      "date": "2025-10-22",
+      "category": "Economía",
+      "content": "Los últimos informes indican un crecimiento sostenido en varios países después de la crisis."
+    },
+    {
+      "title": "Descubrimiento arqueológico en Egipto",
+      "author": "Aisha Khan",
+      "date": "2025-10-18",
+      "category": "Cultura",
+      "content": "Se han encontrado tumbas de más de 3000 años que podrían revelar secretos de la antigua civilización egipcia."
+    },
+    {
+      "title": "Nuevas medidas de sostenibilidad urbana",
+      "author": "Carlos Méndez",
+      "date": "2025-10-21",
+      "category": "Medio Ambiente",
+      "content": "Varias ciudades están implementando planes para reducir la huella de carbono y promover la energía limpia."
+    },
+    {
+      "title": "Torneo internacional de fútbol",
+      "author": "Laura Gómez",
+      "date": "2025-10-23",
+      "category": "Deportes",
+      "content": "La selección nacional se prepara para competir en el campeonato mundial con nuevas estrategias y jugadores jóvenes."
+    }
+  ]
+}
