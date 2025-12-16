@@ -1,23 +1,20 @@
-package Main.java;
-public class Address
-{
-    String street;
-    String city;
-    String state;
-    String country;
-    int zipcode;
+public class Address {
 
-    public Address(String street, String city, String state, String country, int zipcode)
-    {
+    private String street;
+    private String city;
+    private String state;
+    private String country;
+    private String postalCode;
+
+    public Address(String street, String city, String state, String country, String postalCode) {
         this.street = street;
         this.city = city;
         this.state = state;
         this.country = country;
-        this.zipcode = zipcode;
+        this.postalCode = postalCode;
     }
-    public void getFullAddress()
-    {
-        System.out.println(street + ", " + city + ", " + state + ", " + country + " - " + zipcode);
-    }    
 
+    public String getFullAddress() {
+        return street + ", " + city + ", " + state + ", " + country + " (" + postalCode + ")";
+    }
 }

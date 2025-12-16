@@ -1,5 +1,3 @@
-package Main.java;
-
 public class Person{
     private String name;
     private String phone;

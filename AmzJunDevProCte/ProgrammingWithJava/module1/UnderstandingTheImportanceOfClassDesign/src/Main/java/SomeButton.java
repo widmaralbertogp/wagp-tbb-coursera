@@ -1,9 +1,11 @@
-package Main.java;
-
-public class SomeButton {
+public class SomeButton extends GenericButton implements ButtonClick, ButtonHover {
 //more instance variables
-    void onClick() 
+    public void onClick() 
     {
        //implementation of onClick method
+    }
+    public void onHover() 
+    {
+       //implementation of onHover method
     }
 }
