@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>São Paulo Web</title>
+
+<!-- Font Awesome para íconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script defer src="./script.js"></script>
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">🌆 São Paulo Web</div>
+
+  <nav>
+    <a href="#home" id="homeLink">Home</a>
+    <a href="#about" id="aboutLink">About Us</a>
+    <a href="#contact" id="contactLink">Contact Us</a>
+  </nav>
+
+  <!-- Barra de búsqueda -->
+  <form class="search-bar" onsubmit="return false;">
+    <input type="text" id="inputDestin" placeholder="Enter a destination or keyword 🔍">
+    <button type="button" id="search-btn">Search</button>
+    <button type="reset" class="reset-btn">Reset</button>
+  </form>
+</header>
+<!-- Resultado busqueda -->
+  <div id="result"></div>
+  
+<!-- MENÚ LATERAL DE REDES SOCIALES -->
+<div class="social-bar">
+  <a href="https://x.com" target="_blank" class="x"><i class="fa-brands fa-x-twitter"></i></a>
+  <a href="https://facebook.com" target="_blank" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+  <a href="https://instagram.com" target="_blank" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+  <a href="https://youtube.com" target="_blank" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+</div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<!--
+<section class="main-content">
+  <h1>Welcome to São Paulo Web</h1>
+  <p>Explore the city, discover stories, and find recommendations.</p>
+</section>
+-->
+
+  <!-- Contenido dinámico -->
+  <main id="content" class="content">    
+  </main>
+  
+
+</body>
+</html>
