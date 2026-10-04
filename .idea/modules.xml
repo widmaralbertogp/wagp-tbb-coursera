@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/IBMFlStJSDev/IBMFlStJSDev.iml" filepath="$PROJECT_DIR$/IBMFlStJSDev/IBMFlStJSDev.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IBMFlStSfwrDev/IBMFlStSfwrDev.iml" filepath="$PROJECT_DIR$/IBMFlStSfwrDev/IBMFlStSfwrDev.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coursera.iml" filepath="$PROJECT_DIR$/coursera.iml" />
+    </modules>
+  </component>
+</project>
